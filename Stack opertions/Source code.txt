@@ -1,0 +1,99 @@
+#include <stdio.h>
+    int stack[100],i,j,choice=0,n,top=-1;
+    int val;
+    void push();
+    void pop();
+    void show();
+    void main ()
+    {
+
+        printf("Enter the size of stack [MAX=100]:");
+        scanf("%d",&n);
+
+        printf("\n----------------------------------------------\n");
+        printf("\n \tSTACK OPERTIONS USING USING ARRAY\n");
+
+         printf("\n----------------------------------------------\n");
+        while(choice != 4)
+        {
+            printf(" \n Chose one from the below options you want to perform...\n");
+            printf("\n1.Push\n2.Pop\n3.Show\n4.Exit \n");
+            printf("\n Enter your choice: ");
+            scanf("%d",&choice);
+            switch(choice)
+            {
+                case 1:
+                {
+                    push();
+                    break;
+                }
+                case 2:
+                {
+                    pop();
+                    break;
+                }
+                case 3:
+                {
+                    show();
+                    break;
+                }
+                case 4:
+                {
+                    printf("Exiting....");
+                    break;
+                }
+                default:
+                {
+                    printf("Please Enter valid choice! ");
+                }
+            };
+        }
+    }
+
+    void push ()
+    {
+
+        if (top == n )
+        printf("\n you can't enter the value into the stack because stack is already full! ");
+        else
+        {
+            printf("\nEnter the value to be pushed:");
+            scanf("%d",&val);
+            top = top +1;
+            stack[top] = val;
+            printf("Value is push successfully! \n");
+        }
+
+    }
+
+    void pop ()
+    {
+
+        if(top <=-1)
+        {
+            printf("\n\t stack is already empty you can't pop the element!\n");
+        }
+
+        else
+        {
+
+            printf("\n popped element is %d\n",stack[top]);
+            top--;
+        }
+    }
+    void show()
+    {
+           printf("\n after adding values in stack \n");
+           printf("--------\n");
+        for (i=top;i>=0;i--)
+        {
+            printf("|   %d | \t \n",stack[i]);
+            printf("--------\n");
+
+         }
+
+        if(top == -1)
+        {
+            printf("Stack is empty!");
+        }
+    }
