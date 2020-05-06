@@ -89,7 +89,7 @@
             {
                 front = front + 1;
             }
-            printf("\nvalue deleted %d",queue[front]);
+            printf("\nvalue deleted %d",queue[item]);
 
         }
 
